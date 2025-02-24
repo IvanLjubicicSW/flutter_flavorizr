@@ -44,11 +44,11 @@ class IOSTargetLaunchScreenFileProcessor extends QueueProcessor {
           [
             CopyFileProcessor(
               source,
-              '$destination/${flavorName}LaunchScreen.storyboard',
+              '$destination/LaunchScreen$flavorName.storyboard',
               config: config,
             ),
             RuntimeFileStringProcessor(
-              '$destination/${flavorName}LaunchScreen.storyboard',
+              '$destination/LaunchScreen$flavorName.storyboard',
               ReplaceStringProcessor(
                 '[[FLAVOR_NAME]]',
                 flavorName,
@@ -62,7 +62,7 @@ class IOSTargetLaunchScreenFileProcessor extends QueueProcessor {
                 script,
                 project,
                 ios_utils.flatPath(
-                    '$destination/${flavorName}LaunchScreen.storyboard'),
+                    '$destination/LaunchScreen$flavorName.storyboard'),
               ],
               config: config,
             )
